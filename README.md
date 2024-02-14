@@ -31,7 +31,7 @@ npm install node-storage-manager
 Create an instance of NodeStorageManager to manage your storage instances.
 
 ```
-import { NodeStorageManager } from './path/to/nodeStorage';
+import { NodeStorageManager } from 'node-storage-manager';
 ```
 
 ```
@@ -83,6 +83,7 @@ await myStorage.clear();
 ### createStorage(storageName: string): Promise<NodeStorage>
 ### removeStorage(storageName: string): Promise<boolean>
 ### logStorage(): Promise<void>
+
 
 ## NodeStorage methods:
 
