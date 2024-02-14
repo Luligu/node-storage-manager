@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { NodeStorageManager, NodeStorage } from '../src/nodeStorage';
-import NodePersist, { LocalStorage, InitOptions } from 'node-persist';
+import { NodeStorageManager } from '../src/nodeStorage';
+import NodePersist from 'node-persist';
 
 jest.mock('node-persist', () => ({
 	create: jest.fn().mockReturnThis(),
@@ -26,7 +25,7 @@ describe('NodeStorageManager', () => {
 	});
 
 	it('should create and initialize storage with default options', async () => {
-		const storageManager = new NodeStorageManager();
+		new NodeStorageManager();
 		expect(NodePersist.create).toHaveBeenCalledWith({
 			dir: defaultDir,
 			logging: false,
@@ -40,7 +39,7 @@ describe('NodeStorageManager', () => {
 			logging: true,
 		};
 
-		const storageManager = new NodeStorageManager(customOptions);
+		new NodeStorageManager(customOptions);
 		expect(NodePersist.create).toHaveBeenCalledWith(expectedOptions);
 	});
 

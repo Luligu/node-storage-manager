@@ -106,6 +106,7 @@ describe('NodeStorageManager with NodeStorage', () => {
 		console.log('object:', JSON.stringify(returnItem));
 		expect(returnItem).toEqual(item);
 		expect(typeof returnItem).toEqual('object');
+		expect(typeof returnItem).toEqual(typeof item);
 	});
 
 	it('should write and read 100 keys correctly', async () => {

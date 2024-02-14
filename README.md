@@ -31,7 +31,7 @@ npm install node-storage-manager
 Create an instance of NodeStorageManager to manage your storage instances.
 
 ```
-import { NodeStorageManager } from 'node-storage-manager';
+import { NodeStorageManager, NodeStorage } from 'node-storage-manager';
 ```
 
 ```
@@ -95,7 +95,7 @@ await myStorage.clear();
 
 # Contributing
 
-We welcome contributions to NodeStorage! Please read our Contributing Guide for details on our code of conduct and the process for submitting pull requests to us.
+Contributions to NodeStorage are welcome.
 
 # License
 
