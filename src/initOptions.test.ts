@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { NodeStorageManager } from './nodeStorage';
+import { NodeStorageManager, NodeStorage } from '../src/nodeStorage';
 import NodePersist, { LocalStorage, InitOptions } from 'node-persist';
-import path from 'path';
 
 jest.mock('node-persist', () => ({
 	create: jest.fn().mockReturnThis(),
 	initSync: jest.fn().mockImplementation((options) => options), 
+	init: jest.fn().mockResolvedValue(undefined), // Mock init method
+	set: jest.fn().mockResolvedValue(undefined), // Mock init method
 }));
 
 jest.mock('path', () => ({
@@ -16,7 +17,7 @@ jest.mock('path', () => ({
 jest.mock('fs/promises', () => ({
 	rm: jest.fn().mockResolvedValue(undefined),
 }));
-
+ 
 describe('NodeStorageManager', () => {
 	const defaultDir = process.cwd() + '/node_storage';
 
@@ -44,3 +45,4 @@ describe('NodeStorageManager', () => {
 	});
 
 });
+

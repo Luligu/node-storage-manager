@@ -15,5 +15,5 @@
     "declaration": true, // If you want to generate .d.ts files
     "declarationMap": true, // If you want to generate source maps for declaration files
     "sourceMap": true // If you want to generate source maps for your JavaScript files
-  }
+  },
 }

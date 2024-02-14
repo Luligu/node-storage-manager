@@ -1,12 +1,14 @@
 {
   "name": "node-storage-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Asyncronous Node storage manager in type script",
-  "main": "index.js",
+  "main": "dist/nodeStorage.js",
+  "types": "dist/nodeStorage.d.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
     "test": "jest",
+    "test:verbose": "jest --verbose",
     "test:watch": "jest --watch",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
