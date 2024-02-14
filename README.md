@@ -30,18 +30,24 @@ npm install node-storage-manager
 
 Create an instance of NodeStorageManager to manage your storage instances.
 
+```
 import { NodeStorageManager } from './path/to/nodeStorage';
+```
 
+```
 const storageManager = new NodeStorageManager({
   dir: 'path/to/storage/directory', // Optional: Customize the storage directory.
   logging: true, // Optional: Enable logging.
 });
+```
 
 ## Creating a Storage Instance:
 
 Use the manager to create a new storage context.
 
+```
 const myStorage = await storageManager.createStorage('myStorageName');
+```
 
 Using the Storage:
 
