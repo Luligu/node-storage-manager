@@ -82,15 +82,15 @@ await myStorage.clear();
 
 ### createStorage(storageName: string): Promise<NodeStorage>
 ### removeStorage(storageName: string): Promise<boolean>
-logStorage(): Promise<void>
+### logStorage(): Promise<void>
 
 ## NodeStorage methods:
 
-set<T = any>(key: NodeStorageKey, value: T): Promise<void>
-get<T = any>(key: NodeStorageKey, defaultValue?: T): Promise<T>
-remove(key: NodeStorageKey): Promise<void>
-clear(): Promise<void>
-logStorage(): Promise<void>
+### set<T = any>(key: NodeStorageKey, value: T): Promise<void>
+### get<T = any>(key: NodeStorageKey, defaultValue?: T): Promise<T>
+### remove(key: NodeStorageKey): Promise<void>
+### clear(): Promise<void>
+### logStorage(): Promise<void>
 
 # Contributing
 
@@ -103,5 +103,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 # Acknowledgments
 
 Thanks to node-persist for providing the underlying storage mechanism.
-
-This project was created by Luca Liguori.
