@@ -53,27 +53,35 @@ Using the Storage:
 
 ## Set a value:
 
+```
 await myStorage.set('myKey', 'myValue');
+```
 
 ## Get a value:
 
+```
 const value = await myStorage.get('myKey');
 console.log(value); // Outputs: 'myValue'
+```
 
 ## Remove a value:
 
+```
 await myStorage.remove('myKey');
+```
 
 ## Clear the storage:
 
+```
 await myStorage.clear();
+```
 
 # API Reference
 
 ## NodeStorageManager methods:
 
-createStorage(storageName: string): Promise<NodeStorage>
-removeStorage(storageName: string): Promise<boolean>
+### createStorage(storageName: string): Promise<NodeStorage>
+### removeStorage(storageName: string): Promise<boolean>
 logStorage(): Promise<void>
 
 ## NodeStorage methods:
