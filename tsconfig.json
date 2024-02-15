@@ -3,16 +3,16 @@
     "module": "nodenext",
     "target": "esnext",
     "moduleResolution": "nodenext",
+    "outDir": "./dist",
+    "rootDir": "./src", 
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
     "strict": true,
-    "skipLibCheck": true,
-    "outDir": "./dist", // Specify where to output the compiled JS files
-    "rootDir": "./src", // Specify the root directory of input files
-    "resolveJsonModule": true, // If you're importing JSON files
-    "allowSyntheticDefaultImports": true, // For default imports interoperability
-    "declaration": true, // If you want to generate .d.ts files
-    "declarationMap": true, // If you want to generate source maps for declaration files
-    "sourceMap": true // If you want to generate source maps for your JavaScript files
-  },
+    "noImplicitAny": true
+  }
 }
