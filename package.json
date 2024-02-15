@@ -2,6 +2,15 @@
   "name": "node-storage-manager",
   "version": "1.0.2",
   "description": "Asyncronous Node storage manager in type script",
+  "author": "https://github.com/Luligu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Luligu/node-storage-manager"
+  },
+  "bugs": {
+    "url": "https://github.com/Luligu/node-storage-manager/issues"
+  },
   "type": "module",
   "main": "dist/nodeStorage.js",
   "types": "dist/nodeStorage.d.js",
@@ -21,10 +30,13 @@
     "updateDependencies": "npx npm-check-updates -u"
   },
   "keywords": [
-    "node-persist"
+    "node-persist",
+    "persist",
+    "storage",
+    "context",
+    "NodeStorageManager",
+    "NodeStorage"
   ],
-  "author": "https://github.com/Luligu",
-  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.18",
