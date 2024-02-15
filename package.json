@@ -1,6 +1,6 @@
 {
   "name": "node-storage-manager",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Asyncronous Node storage manager in type script",
   "type": "module",
   "main": "dist/nodeStorage.js",
