@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { NodeStorageManager, NodeStorage } from './nodeStorage.js';
+import { NodeStorageManager, NodeStorage } from './nodeStorage';
 
 
 describe('NodeStorageManager with NodeStorage', () => {
@@ -29,6 +28,11 @@ describe('NodeStorageManager with NodeStorage', () => {
     const keys = await storageManager.getStorageNames();
     console.log('getStorageNames()', keys);
     expect(keys?.length).toEqual(3);
+  });
+
+  it('should log the storage names', async () => {
+    await storageManager.logStorage();
+    console.log('should log the storage names:');
   });
 
   it('should return the names of storages created', async () => {

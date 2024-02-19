@@ -1,6 +1,6 @@
 {
   "name": "node-storage-manager",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Asyncronous Node storage manager in type script",
   "author": "https://github.com/Luligu",
   "license": "MIT",
@@ -39,7 +39,7 @@
   ],
   "devDependencies": {
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.11.18",
+    "@types/node": "^20.11.19",
     "@types/node-persist": "^3.1.8",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@typescript-eslint/parser": "^7.0.1",
@@ -50,5 +50,19 @@
   },
   "dependencies": {
     "node-persist": "^4.0.1"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": ["<rootDir>/src"],
+    "testMatch": [
+      "**/__tests__/**/*.+(ts|tsx)",
+      "**/?(*.)+(spec|test).+(ts|tsx)"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/"
+    ],
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
   }
 }

@@ -1,4 +1,4 @@
-import { NodeStorageManager } from './nodeStorage.js';
+import { NodeStorageManager } from './nodeStorage';
 import NodePersist from 'node-persist';
 
 jest.mock('node-persist', () => ({

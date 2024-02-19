@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { NodeStorageManager, NodeStorage } from './nodeStorage.js';
+import { NodeStorageManager, NodeStorage } from './nodeStorage';
+import NodePersist from 'node-persist';
 
 interface DatumTest {
 	key: string;
@@ -22,6 +22,17 @@ describe('NodeStorageManager with NodeStorage', () => {
     const returnItem = await storage.get<number>('noKey', 999);
     expect(typeof returnItem).toEqual('number');
     expect(returnItem).toEqual(999);
+  });
+
+  it('not existing key should return false', async () => {
+    expect(await storage.includes('noKey')).toEqual(false);
+  });
+
+  it('existing key should return true', async () => {
+    await storage.set<number>('existKey', 9876543210);
+    expect(await storage.includes('existKey')).toEqual(true);
+    await storage.remove('existKey');
+    expect(await storage.includes('existKey')).toEqual(false);
   });
 
   it('should return a number', async () => {
@@ -110,7 +121,7 @@ describe('NodeStorageManager with NodeStorage', () => {
   });
 
   it('should write and read 100 keys correctly', async () => {
-    const writePromises = [];
+    const writePromises: Promise<NodePersist.WriteFileResult>[] = [];
     for (let i = 0; i < 100; i++) {
       const key = `Key${i.toString().padStart(3, '0')}`; // Generates Key000, Key001, ..., Key099
       const value = `Value${i}`;
@@ -121,7 +132,7 @@ describe('NodeStorageManager with NodeStorage', () => {
     await Promise.all(writePromises);
 
     // Now, read back the values to ensure they were written correctly
-    const readPromises = [];
+    const readPromises: Promise<void>[] = [];
     for (let i = 0; i < 100; i++) {
       const key = `Key${i.toString().padStart(3, '0')}`;
       readPromises.push(storage.get(key));
