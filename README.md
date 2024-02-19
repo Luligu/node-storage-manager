@@ -8,6 +8,8 @@ NodeStorage is a lightweight, file-based storage management system for Node.js, 
 - Asynchronous data handling.
 - Customizable storage directories for isolated storage contexts.
 - Built-in logging capabilities for monitoring storage initialization and operations.
+- Comprehensive test suite using Jest to ensure reliability and performance.
+- Detailed documentation with JSDoc for better developer experience.
 
 ## Getting Started
 
