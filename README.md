@@ -84,22 +84,22 @@ await myStorage.clear();
 
 - createStorage(storageName: string): Promise&lt;NodeStorage&gt;
 
-- removeStorage(storageName: string): Promise<boolean>
+- removeStorage(storageName: string): Promise&lt;boolean&gt;
 
-- logStorage(): Promise<void>
+- logStorage(): Promise&lt;void&gt;
 
 
 ## NodeStorage methods:
 
-- set<T = any>(key: NodeStorageKey, value: T): Promise<void>
+- set<T = any>(key: NodeStorageKey, value: T): Promise&lt;void&gt;
 
-- get<T = any>(key: NodeStorageKey, defaultValue?: T): Promise<T>
+- get<T = any>(key: NodeStorageKey, defaultValue?: T): Promise&lt;T&gt;
 
-- remove(key: NodeStorageKey): Promise<void>
+- remove(key: NodeStorageKey): Promise&lt;void&gt;
 
-- clear(): Promise<void>
+- clear(): Promise&lt;void&gt;
 
-- logStorage(): Promise<void>
+- logStorage(): Promise&lt;void&gt;
 
 # Contributing
 
