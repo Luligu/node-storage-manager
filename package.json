@@ -1,15 +1,15 @@
 {
-  "name": "node-storage-manager",
+  "name": "node-persist-manager",
   "version": "1.0.3",
   "description": "Asyncronous Node.js storage manager in type script",
   "author": "https://github.com/Luligu",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Luligu/node-storage-manager"
+    "url": "https://github.com/Luligu/node-persist-manager"
   },
   "bugs": {
-    "url": "https://github.com/Luligu/node-storage-manager/issues"
+    "url": "https://github.com/Luligu/node-persist-manager/issues"
   },  
   "engines": {
     "node": ">=18.0.0"

@@ -23,7 +23,7 @@ NodeStorage is a lightweight, file-based storage management system for Node.js, 
 To get started with NodeStorage in your package
 
 ```bash
-npm install node-storage-manager
+npm install node-persist-manager
 ```
 
 # Usage
@@ -33,7 +33,7 @@ npm install node-storage-manager
 Create an instance of NodeStorageManager to manage your storage instances.
 
 ```
-import { NodeStorageManager, NodeStorage } from 'node-storage-manager';
+import { NodeStorageManager, NodeStorage } from 'node-persist-manager';
 ```
 
 ```
