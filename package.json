@@ -1,7 +1,7 @@
 {
   "name": "node-storage-manager",
   "version": "1.0.3",
-  "description": "Asyncronous Node storage manager in type script",
+  "description": "Asyncronous Node.js storage manager in type script",
   "author": "https://github.com/Luligu",
   "license": "MIT",
   "repository": {
@@ -10,6 +10,9 @@
   },
   "bugs": {
     "url": "https://github.com/Luligu/node-storage-manager/issues"
+  },  
+  "engines": {
+    "node": ">=18.0.0"
   },
   "type": "module",
   "main": "dist/nodeStorage.js",
@@ -24,7 +27,7 @@
     "lint:fix": "eslint src/**.ts --fix",
     "clean": "rimraf tsconfig.tsbuildinfo ./dist",
     "cleanBuild": "npm run clean && tsc",
-    "deepClean": "rimraf tsconfig.tsbuildinfo package-lock.json ./dist ./node_modules",
+    "deepClean": "rimraf tsconfig.tsbuildinfo package-lock.json ./dist ./node_modules ./node_storage",
     "prepublishOnly": "npm run lint && npm run cleanBuild",
     "checkDependencies": "npx npm-check-updates",
     "updateDependencies": "npx npm-check-updates -u"
@@ -41,8 +44,8 @@
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.19",
     "@types/node-persist": "^3.1.8",
-    "@typescript-eslint/eslint-plugin": "^7.0.1",
-    "@typescript-eslint/parser": "^7.0.1",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
     "eslint": "^8.56.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.2",
@@ -50,19 +53,5 @@
   },
   "dependencies": {
     "node-persist": "^4.0.1"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
-    "roots": ["<rootDir>/src"],
-    "testMatch": [
-      "**/__tests__/**/*.+(ts|tsx)",
-      "**/?(*.)+(spec|test).+(ts|tsx)"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/",
-      "<rootDir>/dist/"
-    ],
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
   }
 }
