@@ -82,7 +82,7 @@ await myStorage.clear();
 
 ## NodeStorageManager methods:
 
-- createStorage(storageName: string): Promise<<NodeStorage>>
+- createStorage(storageName: string): Promise<<'NodeStorage'>>
 
 - removeStorage(storageName: string): Promise<boolean>
 
