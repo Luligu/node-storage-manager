@@ -39,7 +39,9 @@ export class NodeStorageManager {
     // Create and initialize a new instace of LocalStorage
     this.storage = NodePersist.create(this.initOptions);
     this.storage.initSync(this.initOptions);
-    console.log(`Storage manager initialized with options ${JSON.stringify(this.initOptions)}`);
+    if(this.initOptions.logging===true) {
+      console.log(`Storage manager initialized with options ${JSON.stringify(this.initOptions)}`);
+    }
     /*
 		this.get<Array<NodeStorageName>>('storageNames').then(storageNames => {
 			this.storageNames = storageNames;
