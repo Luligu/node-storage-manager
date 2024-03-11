@@ -1,4 +1,4 @@
-# NodeStorage
+# NodeStorageManager and NodeStorage
 
 [![npm version](https://img.shields.io/npm/v/node-persist-manager.svg)](https://www.npmjs.com/package/node-persist-manager)
 [![npm downloads](https://img.shields.io/npm/dt/node-persist-manager.svg)](https://www.npmjs.com/package/node-persist-manager)
