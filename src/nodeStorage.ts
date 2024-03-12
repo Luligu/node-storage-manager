@@ -16,6 +16,7 @@ import path from 'path';
 
 export type NodeStorageKey = string;
 export type NodeStorageName = string;
+export { InitOptions } from 'node-persist';
 
 /**
  * Class responsible for managing multiple node storages.
