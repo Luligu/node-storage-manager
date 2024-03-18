@@ -51,6 +51,14 @@ export class NodeStorageManager {
   }
 
   /**
+   * Closes the node storage manager by stopping the expired keys interval and the write queue interval.
+   */
+  async close() {
+    this.storage.stopExpiredKeysInterval();
+    this.storage.stopWriteQueueInterval();
+  }
+
+  /**
    * Creates and initializes a new storage with a given name.
    * @param {string} storageName - The name of the new storage to create.
    * @returns {Promise<NodeStorage>} A promise that resolves to the newly created NodeStorage instance.
@@ -138,6 +146,14 @@ export class NodeStorage {
   constructor(storage: LocalStorage, initOptions: InitOptions) {
     this.storage = storage;
     this.initOptions = initOptions;
+  }
+
+  /**
+   * Closes the node storage by stopping the expired keys interval and the write queue interval.
+   */
+  async close() {
+    this.storage.stopExpiredKeysInterval();
+    this.storage.stopWriteQueueInterval();
   }
 
   /**
