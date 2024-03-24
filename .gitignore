@@ -12,3 +12,6 @@ dist/
 
 # Jest output
 node_storage/
+
+# Npm install
+package-lock.json

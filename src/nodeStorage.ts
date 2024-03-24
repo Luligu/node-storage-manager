@@ -215,8 +215,8 @@ export class NodeStorage {
   async logStorage() {
     console.log(`This NodeStorage has ${await this.storage.length()} keys:`);
     const keys = await this.storage.keys();
-    keys.forEach(async key =>{
+    for (const key of keys) {
       console.log(`- ${key}: ${await this.storage.get(key)}`);
-    });
+    }
   }
 }
