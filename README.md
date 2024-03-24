@@ -95,6 +95,8 @@ await myStorage.clear();
 
 - async getStorageNames(): Promise&lt;NodeStorageName[]&gt;
 
+- async logStorage(): Promise&lt;void&gt;
+
 
 ## NodeStorage methods:
 
