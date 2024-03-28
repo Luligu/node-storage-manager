@@ -1,22 +1,27 @@
 {
   "name": "node-persist-manager",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Asyncronous Node.js storage manager in type script",
   "author": "https://github.com/Luligu",
   "license": "MIT",
+  "homepage": "https://github.com/Luligu/node-persist-manager/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Luligu/node-persist-manager"
+    "url": "git+https://github.com/Luligu/node-persist-manager.git"
   },
   "bugs": {
     "url": "https://github.com/Luligu/node-persist-manager/issues"
   },  
-  "engines": {
-    "node": ">=18.0.0"
+  "funding": {
+    "type": "buymeacoffee",
+    "url": "https://www.buymeacoffee.com/luligugithub"
   },
   "type": "module",
   "main": "dist/nodeStorage.js",
   "types": "dist/nodeStorage.d.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
