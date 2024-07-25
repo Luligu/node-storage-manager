@@ -1,24 +1,35 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { jest } from '@jest/globals';
 import { NodeStorageManager } from './nodeStorage';
-import NodePersist from 'node-persist';
+import NodePersist, { LocalStorage } from 'node-persist';
+import path from 'path';
+import fsPromises from 'fs/promises';
 
-jest.mock('node-persist', () => ({
-  create: jest.fn().mockReturnThis(),
-  initSync: jest.fn().mockImplementation((options) => options),
-  init: jest.fn().mockResolvedValue(undefined), // Mock init method
-  set: jest.fn().mockResolvedValue(undefined), // Mock init method
-}));
+// Mock node-persist module
+jest.spyOn(NodePersist, 'create').mockImplementation((options) => {
+  return {
+    initSync: jest.fn(),
+    options,
+  } as unknown as LocalStorage;
+});
 
-jest.mock('path', () => ({
-  ...jest.requireActual('path'),
-  join: jest.fn().mockImplementation((...args) => args.join('/')),
-}));
+// Mock path module
+jest.spyOn(path, 'join').mockImplementation((...args) => args.join('/'));
 
-jest.mock('fs/promises', () => ({
-  rm: jest.fn().mockResolvedValue(undefined),
-}));
+// Mock fs/promises module
+jest.spyOn(fsPromises, 'rm').mockResolvedValue(undefined);
 
 describe('NodeStorageManager', () => {
   const defaultDir = process.cwd() + '/node_storage';
+  let consoleLogSpy: jest.SpiedFunction<typeof console.log>;
+
+  beforeAll(() => {
+    // Spy on and mock console.log
+    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation((...args: any[]) => {
+      // Mock implementation or empty function
+    });
+  });
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -29,6 +40,8 @@ describe('NodeStorageManager', () => {
     expect(NodePersist.create).toHaveBeenCalledWith({
       dir: defaultDir,
       logging: false,
+      writeQueue: false,
+      expiredInterval: undefined,
     });
   });
 
@@ -37,11 +50,10 @@ describe('NodeStorageManager', () => {
     const expectedOptions = {
       dir: 'custom_dir',
       logging: true,
+      writeQueue: false,
+      expiredInterval: undefined,
     };
-
     new NodeStorageManager(customOptions);
     expect(NodePersist.create).toHaveBeenCalledWith(expectedOptions);
   });
-
 });
-

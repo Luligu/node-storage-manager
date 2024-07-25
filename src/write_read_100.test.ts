@@ -1,19 +1,27 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-console */
 import { NodeStorageManager, NodeStorage } from './nodeStorage';
 import NodePersist from 'node-persist';
+import { jest } from '@jest/globals';
 
 interface DatumTest {
-	key: string;
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	value: any;
-	ttl?: number;
+  key: string;
+
+  value: any;
+  ttl?: number;
 }
 
 describe('NodeStorageManager with NodeStorage', () => {
+  let consoleLogSpy: jest.SpiedFunction<typeof console.log>;
   let storageManager: NodeStorageManager;
   let storage: NodeStorage;
 
   beforeAll(async () => {
-    // Assuming NodeStorageManager can create a storage instance
+    // Spy on and mock console.log
+    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation((...args: any[]) => {
+      // Mock implementation or empty function
+    });
     storageManager = new NodeStorageManager();
     storage = await storageManager.createStorage('testStorage');
   });
@@ -102,7 +110,7 @@ describe('NodeStorageManager with NodeStorage', () => {
   });
 
   it('should return an object', async () => {
-    const item = {abc: 'abc', n123: 234, undef: undefined, nil: null};
+    const item = { abc: 'abc', n123: 234, undef: undefined, nil: null };
     await storage.set<object>('objectKey', item);
     const returnItem = await storage.get<object>('objectKey');
     console.log('object:', JSON.stringify(returnItem));
@@ -111,7 +119,7 @@ describe('NodeStorageManager with NodeStorage', () => {
   });
 
   it('should return an interface', async () => {
-    const item: DatumTest = {key: 'abc', value: 234};
+    const item: DatumTest = { key: 'abc', value: 234 };
     await storage.set<DatumTest>('objectKey', item);
     const returnItem = await storage.get<DatumTest>('objectKey');
     console.log('object:', JSON.stringify(returnItem));
@@ -144,5 +152,4 @@ describe('NodeStorageManager with NodeStorage', () => {
       expect(value).toEqual(`Value${index}`);
     });
   });
-
 });

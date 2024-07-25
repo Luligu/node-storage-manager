@@ -98,7 +98,6 @@ await myStorage.clear();
 
 - async logStorage(): Promise&lt;void&gt;
 
-
 ## NodeStorage methods:
 
 - async set<T = any>(key: NodeStorageKey, value: T): Promise&lt;void&gt;
